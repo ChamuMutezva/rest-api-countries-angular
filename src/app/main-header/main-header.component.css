@@ -1,0 +1,24 @@
+header {
+    height: 20vh;
+    background-color: hsl(209, 23%, 22%);
+    position: fixed;
+    width: 100%;   
+    top: 0;
+    left: 0;
+    z-index: 2;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.modeSelector {
+    width: 25%;
+    margin-left: auto;
+}
+h1 {
+    width: 60%;
+    text-align: center;
+}
+h1, h2 {
+    font-size: medium;
+}
