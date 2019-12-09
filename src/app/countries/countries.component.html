@@ -1,28 +1,39 @@
-<app-main-header></app-main-header>
 <div class="wrapper">
     
-
-    <div class="container">
+    <!--8888888888888888888888888888888888888888-->
+   <!-- <header>
+        <h1>Countries of the world</h1>
+        <div class="modeSelector">
+            <i class="fa fa-bars" [routerLink]="['/login']"></i>
+            <h2>Dark Mode</h2>
+        </div>
+    </header> -->
+    <!--8888888888888888888888888888888888888888-->  
         <nav>
-            <input type="search" placeholder="Search for a country...">
+            <input type="search" placeholder="Search for a country..." [(ngModel)]="countryFilter">
             <select name="continents" class="listContinents">
-                <option value="">Select a continent...</option>
-<option value="africa">Africa</option>
-<option value="europe"><Europe</option>
-    <option value="asia">Asia</option>
-    <option value="oceania">Oceania</option>
-
-
+                <option value="">Filter by region</option>
+                <option value="africa">Africa</option>
+                <option value="america">America</option>
+                <option value="asia">Asia</option>
+                <option value="europe">Europe</option>
+                <option value="oceania">Oceania</option>
             </select>
         </nav>
-        <div class="main" *ngFor="let country of countries">
-            <img [src]="country.flag" alt="">
-            <div class="details">
-                <p>{{country.name}}</p>
-                <p>{{country.population}}</p>
-                <p>{{country.region}}</p>
-                <p>{{country.capital}}</p>
+
+        <div class="container">
+            <div class="main" *ngFor="let country of filteredCountries">
+                <img [src]="country.flag" alt="">
+                <div class="details">
+                    <h3>{{country.name}}</h3>
+                    <h4>Population: {{country.population}}</h4>
+                    <h5>Region: {{country.region}}</h5>
+                    <h6>Capital: {{country.capital}}</h6>
+                    <p>{{country.alpha3Code}}</p>
+                    <button [routerLink]="['/countries', country.name]">Details</button>
+                </div>
             </div>
         </div>
-    </div>
+      
 </div>
+

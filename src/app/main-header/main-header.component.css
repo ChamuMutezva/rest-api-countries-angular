@@ -22,3 +22,7 @@ h1 {
 h1, h2 {
     font-size: medium;
 }
+h1:hover {
+    cursor: pointer;
+    color: red;
+}

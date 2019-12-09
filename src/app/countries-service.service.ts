@@ -25,6 +25,26 @@ export class CountriesServiceService {
 
   }
 
+  getCountry(countryName, callback: (data) => void) { 
+    return this.getCountries().subscribe(result => {        
+      console.log('---------');
+      let returnObj = {};
+      const matchedResult = result.map(country=>{
+        if(country.name == countryName){
+            console.log('returning country details ', country);
+            returnObj = country;
+        }
+      });      
+      console.log('---------');
+      callback(returnObj);  // execute the callback function to act on the matched result;
+    },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
         console.log(error);

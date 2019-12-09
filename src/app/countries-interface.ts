@@ -16,8 +16,8 @@ export interface CountriesInterface {
     borders: string[];
     nativeName: string;
     numericCode: string;
-    currencies: any;
-    languages: any;
+    currencies: string[];
+    languages: string[];
     translations: any;
     flag: string;
     regionalBlocks: any;

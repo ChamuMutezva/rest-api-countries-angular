@@ -1,7 +1,8 @@
 <header>
-    <h1>Countries of the world</h1>
+    <h1 [routerLink]="['/countries']" >Countries of the world</h1>
     <div class="modeSelector">
-        <i class="fas fa-moon"></i>
+        <i class="fa fa-bars" [routerLink]="['/login']"></i>
         <h2>Dark Mode</h2>
     </div>
 </header>
+<router-outlet></router-outlet>
