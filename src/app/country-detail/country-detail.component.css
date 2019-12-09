@@ -6,3 +6,23 @@ img {
     display: block;
     margin: auto;
 }
+button.btn.btn-outline-secondary {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 11%;
+    width: 25%;
+    height: 6vh;
+    background-color: hsl(210, 3%, 31%);
+    background-image: url("../../assets/arrow-left-solid.svg");
+    background-repeat: no-repeat;
+}
+
+.countryInfor {
+    margin: 33px auto 5%;
+    width: 78%;
+    display: block;
+}
+
+.countryInfor h2 {
+    margin-bottom: 15px;
+}

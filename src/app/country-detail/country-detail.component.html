@@ -2,19 +2,21 @@
     <button class="btn btn-outline-secondary" (click)='onBack()'>
         Back
     </button>
-    <div class="container">       
+    <div class="container">
         <img [src]="flag" alt="">
-        <h2>{{name}}</h2>
-        <p>Native name {{nativeName}}</p>
-        <p>Population {{population}}</p>
-        <p>Region{{region}}</p>
-        <p>Sub region{{subregion}}</p>
-        <p>Capital {{capital}}</p>
-        <p>Top Level dormain{{tld}}</p>
-        <div *ngFor="let current of currencies">Currencies 
-            {{current}}
+        <div class="countryInfor">
+            <h2>{{name}}</h2>
+            <p>Native name: {{nativeName}}</p>
+            <p>Population: {{population}}</p>
+            <p>Region: {{region}}</p>
+            <p>Sub region: {{subregion}}</p>
+            <p>Capital: {{capital}}</p>
+            <p>Top Level dormain{{tld}}</p>
+            <div *ngFor="let myCurrent of resultCurrency">
+                <span> {{myCurrent}}</span>
+            </div>
+            <p *ngFor="let lang of resultLang"> <span>{{lang}}</span> </p>
+            <h4>Border</h4>
         </div>
-        <p *ngFor="let lang of languages">Languages <span>{{lang}}</span> </p>
-
     </div>
 </div>
