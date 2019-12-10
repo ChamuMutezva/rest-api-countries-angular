@@ -1,3 +1,6 @@
+body {
+    font-weight: 100;
+}
 .countryDetail {
     margin-top: 100px;
 }
@@ -25,4 +28,59 @@ button.btn.btn-outline-secondary {
 
 .countryInfor h2 {
     margin-bottom: 15px;
+}
+
+.borders {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 5px;
+    justify-content: center;
+}
+
+.borders button {
+    display: block;
+    width: 40%;
+    height: 7vh;
+    margin: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width: 585px) {
+    img, .countryInfor  {
+        width: 60%;
+    }
+    button.btn.btn-outline-secondary {
+        margin-left: 20%;
+    }
+    .borders {      
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 830px) {
+    img {
+        width: 40%;
+    }
+    .countryInfor {
+        margin: 0;
+        width: 60%;
+        padding-left: 5%;
+        font-size: small;
+    }
+}
+
+@media screen and (min-width: 1220px) {
+    .countryDetail {
+        margin-top: 140px;
+    }
+    .countryInfor {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }

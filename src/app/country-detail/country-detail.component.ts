@@ -17,6 +17,8 @@ export class CountryDetailComponent implements OnInit {
   tld: string;
 
   alpha3Code: string;
+  borders: string[];
+  borderingCountries: any = [];
 
   currencies: string[];
   countryCurrency: string[];
@@ -43,10 +45,12 @@ export class CountryDetailComponent implements OnInit {
       this.languages = resultCountry.languages;
       this.alpha3Code = resultCountry.alpha3Code;
       this.nativeName = resultCountry.nativeName;
+      this.borders = resultCountry.borders;
 
+      //curency used 
       this.countryCurrency = { ...this.currencies };
       Object.entries(this.countryCurrency).forEach(item => {
-        for (let [key, value] of Object.entries(item[1])) {          
+        for (let [key, value] of Object.entries(item[1])) {
           if (key == "name") {
             if (value !== null) {
               console.log(value);
@@ -57,9 +61,10 @@ export class CountryDetailComponent implements OnInit {
         }
       })
 
-      this.countryLang = {...this.languages};
+      //languages used
+      this.countryLang = { ...this.languages };
       Object.entries(this.countryLang).forEach(lang => {
-        for (let [key, value] of Object.entries(lang[1])){
+        for (let [key, value] of Object.entries(lang[1])) {
           if (key == "name") {
             console.log(value);
             this.resultLang.push(value);
@@ -67,7 +72,29 @@ export class CountryDetailComponent implements OnInit {
         }
       })
 
-console.log(this.alpha3Code);
+      //bordering countries
+      if (this.borders.length <= 0) {
+        console.log("no surrounding countries");
+        return;
+      } else {
+        console.log("Iterate the surrounding countries");
+      }
+      console.log(this.alpha3Code);
+      this.borders.forEach(border => {
+        console.log(border);
+        //-----------------------
+        //use fetch api to view bordering countries.
+        const apiEndpoint = `https://restcountries.eu/rest/v2/alpha/${border}`;
+
+        fetch(apiEndpoint)
+          .then(response => response.json())
+          .then(data => {
+            console.log(data.name);
+            this.borderingCountries.push(data.name);
+          }).catch(error => console.log(error))
+      
+        //----------------------------------------
+      })
     });
 
 

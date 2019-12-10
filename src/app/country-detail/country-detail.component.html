@@ -5,18 +5,37 @@
     <div class="container">
         <img [src]="flag" alt="">
         <div class="countryInfor">
-            <h2>{{name}}</h2>
-            <p>Native name: {{nativeName}}</p>
-            <p>Population: {{population}}</p>
-            <p>Region: {{region}}</p>
-            <p>Sub region: {{subregion}}</p>
-            <p>Capital: {{capital}}</p>
-            <p>Top Level dormain{{tld}}</p>
-            <div *ngFor="let myCurrent of resultCurrency">
-                <span> {{myCurrent}}</span>
+            <div class="mainDetails">
+                <h2>{{name}}</h2>
+                <p>Native name: {{nativeName}}</p>
+                <p>Population: {{population}}</p>
+                <p>Region: {{region}}</p>
+                <p>Sub region: {{subregion}}</p>
+                <p>Capital: {{capital}}</p>
             </div>
-            <p *ngFor="let lang of resultLang"> <span>{{lang}}</span> </p>
-            <h4>Border</h4>
+            <div class="secondaryCountryDetails">
+                <p>Top Level dormain{{tld}}</p>
+                <div class="currency">
+                    Currencies :
+                    <span *ngFor="let myCurrent of resultCurrency">
+                        {{myCurrent}},
+                    </span>
+                </div>
+                <div class="langauges">
+                    Languages:
+                    <span *ngFor="let lang of resultLang">
+                        {{lang}},
+                    </span>
+                </div>
+            </div>
+            <div class="borderDetails">
+                <h4>Border</h4>
+                <div class="borders">
+                    <button *ngFor="let borderCountry of borderingCountries">
+                        {{borderCountry}}
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 </div>
