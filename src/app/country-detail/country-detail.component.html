@@ -6,12 +6,14 @@
         <img [src]="flag" alt="">
         <div class="countryInfor">
             <div class="mainDetails">
-                <h2>{{name}}</h2>
-                <p>Native name: {{nativeName}}</p>
-                <p>Population: {{population}}</p>
-                <p>Region: {{region}}</p>
-                <p>Sub region: {{subregion}}</p>
-                <p>Capital: {{capital}}</p>
+                <div class="primaryCountryDetails">
+                    <h2>{{name}}</h2>
+                    <p>Native name: {{nativeName}}</p>
+                    <p>Population: {{population}}</p>
+                    <p>Region: {{region}}</p>
+                    <p>Sub region: {{subregion}}</p>
+                    <p>Capital: {{capital}}</p>
+                </div>
             </div>
             <div class="secondaryCountryDetails">
                 <p>Top Level dormain{{tld}}</p>
@@ -28,9 +30,9 @@
                     </span>
                 </div>
             </div>
-            <div class="borderDetails">
-                <h4>Border</h4>
+            <div class="borderDetails">                
                 <div class="borders">
+                        <h4>Border</h4>
                     <button *ngFor="let borderCountry of borderingCountries">
                         {{borderCountry}}
                     </button>

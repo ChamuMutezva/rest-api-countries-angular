@@ -16,17 +16,14 @@ body {
     display: flex;
     flex-direction: row;
 }
-app-main-header {
-
-}
 
 nav {
     width: 100%;
 }
 .container {
     display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(300px , 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(350px , 1fr));
+   
    /* position: relative;
     gap: 15px;
     top: 28vh; */
@@ -38,21 +35,25 @@ p {
     color: white;
 
 }
-.main {
- /*  margin: auto; */
- display: block;
-    /* box-shadow: -1px 0px 0px rgba(0,0,0,0.96);
-     border: 1px solid rgb(101, 107, 124);
-    */
-    width: 100%;
-   
-    border-radius: 10px;
+.main { 
+ display: block;    
+    width: 300px;
+   margin: auto;
+   /* border-radius: 10px;*/
 }
 
 img {
-    width: 85%;
+    width: 100%;
+    height: 30vh;
     display: block;
-    margin: auto;
+    margin: 5% auto 0;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: hsl(209, 23%, 22%);
+}
+
+img:hover {
+cursor: pointer;
 }
 
 input[type="search"] {
@@ -77,36 +78,33 @@ select.listContinents {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
-    height: 30vh;
-    width: 85%;
+    padding-left: 5%;
+    align-items:flex-start;
+    height: 35vh;
+    width: 100%;
     margin: auto;
    background-color:  hsl(209, 23%, 22%);
+   border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
-/* ******************
-header {
-    height: 20vh;
-    background-color: hsl(209, 23%, 22%);
-    position: fixed;
-    width: 100%;   
-    top: 0;
-    left: 0;
-    z-index: 2;
-    color: white;
-    display: flex;
-    align-items: center;
+h3, h4, h5, h6 {
+    font-weight: 300;
 }
 
-.modeSelector {
-    width: 25%;
-    margin-left: auto;
+@media screen and (min-width: 700px) {
+    nav {    
+        padding-top: 5%;    
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: baseline;
+    }
+    select.listContinents {       
+        width: 30%;
+      /*  margin: 141px auto 0;  */  
+    }
+    input[type="search"] {
+        width: 30%;        
+    }
 }
-h1 {
-    width: 60%;
-    text-align: center;
-}
-h1, h2 {
-    font-size: medium;
-}
-********/

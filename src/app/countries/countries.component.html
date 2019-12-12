@@ -23,14 +23,14 @@
 
         <div class="container">
             <div class="main" *ngFor="let country of filteredCountries">
-                <img [src]="country.flag" alt="">
+                <img [src]="country.flag" alt="" [routerLink]="['/countries', country.name]">
                 <div class="details">
                     <h3>{{country.name}}</h3>
                     <h4>Population: {{country.population}}</h4>
                     <h5>Region: {{country.region}}</h5>
                     <h6>Capital: {{country.capital}}</h6>
-                    <p>{{country.alpha3Code}}</p>
-                    <button [routerLink]="['/countries', country.name]">Details</button>
+                    <!-- <p>{{country.alpha3Code}}</p>
+                   <button [routerLink]="['/countries', country.name]">Details</button> -->
                 </div>
             </div>
         </div>

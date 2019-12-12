@@ -24,6 +24,7 @@ button.btn.btn-outline-secondary {
     margin: 33px auto 5%;
     width: 78%;
     display: block;
+    font-size: small;
 }
 
 .countryInfor h2 {
@@ -41,14 +42,31 @@ button.btn.btn-outline-secondary {
 .borders button {
     display: block;
     width: 40%;
-    height: 7vh;
+    height: 9vh;
     margin: 5px;
+    font-size: small;
 }
 
 .container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.primaryCountryDetails {
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 10%;
+    justify-content: space-between;
+}
+
+.secondaryCountryDetails {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 15vh;
 }
 
 @media screen and (min-width: 585px) {
@@ -65,7 +83,8 @@ button.btn.btn-outline-secondary {
 
 @media screen and (min-width: 830px) {
     img {
-        width: 40%;
+        width: 35%;
+    margin: auto 0% auto 5%;
     }
     .countryInfor {
         margin: 0;
@@ -78,9 +97,21 @@ button.btn.btn-outline-secondary {
 @media screen and (min-width: 1220px) {
     .countryDetail {
         margin-top: 140px;
+        padding-top: 5%;
+    }
+    .borderDetails {
+        grid-area: 2/1/2/3;
     }
     .countryInfor {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
+    button.btn.btn-outline-secondary {
+        margin-left: 5%;
+        width: 10%;
+    }
+    .borders {       
+        width: 30%;        
+    }
+
 }
