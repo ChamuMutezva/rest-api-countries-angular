@@ -111,7 +111,12 @@ button.btn.btn-outline-secondary {
         width: 10%;
     }
     .borders {       
-        width: 30%;        
+        width: 100%;        
+    }
+    .borders button {       
+        width: 25%;
+        height: 7vh;      
+        font-size: medium;
     }
 
 }
