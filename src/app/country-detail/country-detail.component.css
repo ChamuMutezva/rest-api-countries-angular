@@ -1,5 +1,6 @@
 body {
     font-weight: 100;
+    overflow-x: hidden;
 }
 .countryDetail {
     margin-top: 100px;
@@ -43,8 +44,8 @@ button.btn.btn-outline-secondary {
 .borders button {
     display: block;
     width: 28%;
-    height: 9vh;
-    margin: 5px auto;
+    height: 5vh;
+    margin: 5px;
     font-size: small;
 }
 
@@ -94,6 +95,10 @@ h4 {
     }
     .borders {      
         justify-content: space-between;
+        width: 70%;
+    }
+    .borderDetails {
+        width: 75vw;        
     }
 }
 
@@ -130,9 +135,14 @@ h4 {
         width: 100%;        
     }
     .borders button {       
-        width: 25%;
+        width: 24%;
         height: 7vh;      
         font-size: medium;
+        margin: 6px 1px;
+    }  
+    h4 {
+        padding-left: 3%;
+        padding-top: 6%;
     }
 
 }
