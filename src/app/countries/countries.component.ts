@@ -26,13 +26,6 @@ export class CountriesComponent implements OnInit {
   filteredCountries: CountriesInterface[] = [];
   ngOnInit() {
     this.countriesService.getCountries().subscribe(
-      /* (data) => {
-          this.countries = data;
-         console.log(this.countries);
-         },
-       
-       (err: any) => console.log(err),
-       () => console.log("execution complete") */
       countries => {
         this.countries = countries;
         this.filteredCountries = this.countries;
@@ -41,17 +34,23 @@ export class CountriesComponent implements OnInit {
       error => this.errorMsg = <any>error
     );
 
-    /************************************* */
-
-
   }
 
   performFilter(filterBy: string): CountriesInterface[] {
     filterBy = filterBy.toLocaleLowerCase();
     return this.countries.filter((country: CountriesInterface) =>
       country.name.toLocaleLowerCase().indexOf(filterBy) !== -1)
-
-
   }
+
+  //Fetch countries in a continent
+  fetchContinent = () => {
+    const apiEndpoint = `https://restcountries.eu/rest/v2/region/africa`;
+    fetch(apiEndpoint)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+      }).catch(error => console.log(error))
+  }
+  //End of fetch continent
 
 }

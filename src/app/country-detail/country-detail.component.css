@@ -44,9 +44,12 @@ button.btn.btn-outline-secondary {
 .borders button {
     display: block;
     width: 28%;
-    height: 5vh;
+    height: fit-content;
     margin: 5px;
     font-size: small;
+    background-color: hsl(210, 34%, 46%);
+    border: 1px solid hsl(210, 34%, 46%);
+    color: white;
 }
 
 .container {
@@ -132,7 +135,7 @@ h4 {
         width: 10%;
     }
     .borders {       
-        width: 100%;        
+        width: 72%;        
     }
     .borders button {       
         width: 24%;

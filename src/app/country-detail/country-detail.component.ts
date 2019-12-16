@@ -30,6 +30,7 @@ export class CountryDetailComponent implements OnInit {
 
   name = this.route.snapshot.paramMap.get('name');
 
+
   constructor(private countryService: CountriesServiceService,
     private route: ActivatedRoute, private router: Router) { }
 
@@ -92,7 +93,7 @@ export class CountryDetailComponent implements OnInit {
             console.log(data.name);
             this.borderingCountries.push(data.name);
           }).catch(error => console.log(error))
-      
+
         //----------------------------------------
       })
     });
@@ -105,6 +106,57 @@ export class CountryDetailComponent implements OnInit {
   }
 
 
+  //country button functionality
+  changeCountry(): any {
+    const currentTarget = document.querySelector(".borders");
+    currentTarget.addEventListener("click", function (evt) {
+      console.log(evt.target);
+      const targetBtn = (evt.target as HTMLInputElement).innerHTML.trim();
+      console.log(targetBtn);
+
+      const fetchCountry = () => {
+        const apiEndpoint = `https://restcountries.eu/rest/v2/name/${targetBtn}`;
+        fetch(apiEndpoint)
+          .then(response => response.json())
+          .then(data => {
+            let currentData ={...data};
+            console.log(currentData[0].name);
+            console.log(currentData[0].flag);
+
+            this.population = currentData[0].population;
+            this.capital = currentData[0].capital;
+            this.flag = currentData[0].flag;
+            this.region = currentData[0].region;
+            this.subregion = currentData[0].subregion;
+            this.tld = currentData[0].topLevelDomain;
+            this.currencies = currentData[0].currencies;
+            this.languages = currentData[0].languages;
+            this.alpha3Code = currentData[0].alpha3Code;
+            this.nativeName = currentData[0].nativeName;
+            this.borders = currentData[0].borders;
+      
 
 
+          }).catch(error => console.log(error))
+      }
+
+      fetchCountry();
+
+    })
+
+  }
+
+  //End of country btn logic
+
+  //Fetch continent
+  fetchContinent = () => {
+    const apiEndpoint = `https://restcountries.eu/rest/v2/region/africa`;
+    fetch(apiEndpoint)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+      }).catch(error => console.log(error))
+  }
+
+  //end of fetch continent button
 }
