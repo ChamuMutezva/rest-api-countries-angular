@@ -8,6 +8,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
   styleUrls: ['./country-detail.component.css']
 })
 export class CountryDetailComponent implements OnInit {
+  count: number = 0;
   population: number;
   capital: string;
   flag: string;
@@ -34,6 +35,9 @@ export class CountryDetailComponent implements OnInit {
   constructor(private countryService: CountriesServiceService,
     private route: ActivatedRoute, private router: Router) { }
 
+ // @HostListener('click', ['event'])
+
+
   ngOnInit() {
     this.countryService.getCountry(this.name, (resultCountry) => {
       this.population = resultCountry.population;
@@ -54,7 +58,7 @@ export class CountryDetailComponent implements OnInit {
         for (let [key, value] of Object.entries(item[1])) {
           if (key == "name") {
             if (value !== null) {
-              console.log(value);
+             // console.log(value);
               this.resultCurrency.push(value);
             }
 
@@ -67,7 +71,7 @@ export class CountryDetailComponent implements OnInit {
       Object.entries(this.countryLang).forEach(lang => {
         for (let [key, value] of Object.entries(lang[1])) {
           if (key == "name") {
-            console.log(value);
+           // console.log(value);
             this.resultLang.push(value);
           }
         }
@@ -78,11 +82,11 @@ export class CountryDetailComponent implements OnInit {
         console.log("no surrounding countries");
         return;
       } else {
-        console.log("Iterate the surrounding countries");
+       // console.log("Iterate the surrounding countries");
       }
-      console.log(this.alpha3Code);
+     // console.log(this.alpha3Code);
       this.borders.forEach(border => {
-        console.log(border);
+      //  console.log(border);
         //-----------------------
         //use fetch api to view bordering countries.
         const apiEndpoint = `https://restcountries.eu/rest/v2/alpha/${border}`;
@@ -90,7 +94,7 @@ export class CountryDetailComponent implements OnInit {
         fetch(apiEndpoint)
           .then(response => response.json())
           .then(data => {
-            console.log(data.name);
+           // console.log(data.name);
             this.borderingCountries.push(data.name);
           }).catch(error => console.log(error))
 
@@ -108,41 +112,44 @@ export class CountryDetailComponent implements OnInit {
 
   //country button functionality
   changeCountry(): any {
-    const currentTarget = document.querySelector(".borders");
-    currentTarget.addEventListener("click", function (evt) {
-      console.log(evt.target);
-      const targetBtn = (evt.target as HTMLInputElement).innerHTML.trim();
-      console.log(targetBtn);
-
-      const fetchCountry = () => {
-        const apiEndpoint = `https://restcountries.eu/rest/v2/name/${targetBtn}`;
-        fetch(apiEndpoint)
-          .then(response => response.json())
-          .then(data => {
-            let currentData ={...data};
-            console.log(currentData[0].name);
-            console.log(currentData[0].flag);
-
-            this.population = currentData[0].population;
-            this.capital = currentData[0].capital;
-            this.flag = currentData[0].flag;
-            this.region = currentData[0].region;
-            this.subregion = currentData[0].subregion;
-            this.tld = currentData[0].topLevelDomain;
-            this.currencies = currentData[0].currencies;
-            this.languages = currentData[0].languages;
-            this.alpha3Code = currentData[0].alpha3Code;
-            this.nativeName = currentData[0].nativeName;
-            this.borders = currentData[0].borders;
-      
+    this.count++;
+    console.log(event.target);
+    console.log(this.count);
+    const targetBtn = (event.target as HTMLInputElement).innerHTML.trim();
+    console.log(targetBtn);
 
 
-          }).catch(error => console.log(error))
-      }
+    const fetchCountry = () => {
+      const apiEndpoint = `https://restcountries.eu/rest/v2/name/${targetBtn}`;
+      fetch(apiEndpoint)
+        .then(response => response.json())
+        .then(data => {
+          let currentData = { ...data };
+          this.currencies = [];
+          console.log(currentData[0].name);
+          console.log(currentData[0].flag);
 
-      fetchCountry();
+          this.name = currentData[0].name;
+          this.population = currentData[0].population;
+          this.capital = currentData[0].capital;
+          this.flag = currentData[0].flag;
+          this.region = currentData[0].region;
+          this.subregion = currentData[0].subregion;
+          this.tld = currentData[0].topLevelDomain;
+          this.currencies = currentData[0].currencies;
+          this.languages = currentData[0].languages;
+          this.alpha3Code = currentData[0].alpha3Code;
+          this.nativeName = currentData[0].nativeName;
+          this.borders = currentData[0].borders;
 
-    })
+
+
+        }).catch(error => console.log(error))
+    }
+
+    fetchCountry();
+
+
 
   }
 

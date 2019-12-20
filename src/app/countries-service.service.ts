@@ -19,7 +19,7 @@ export class CountriesServiceService {
 
   getCountries(): Observable<CountriesInterface[]> {
     return this.http.get<CountriesInterface[]>(this.url).pipe(
-      tap(data => console.log('All: ' + JSON.stringify(data))),
+      tap(data => console.log( /*'All: ' + JSON.stringify(data) */) ),
       catchError(this.handleError)
     );
 
