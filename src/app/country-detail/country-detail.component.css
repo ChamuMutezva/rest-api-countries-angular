@@ -22,7 +22,7 @@ button.btn.btn-outline-secondary {
 }
 
 .countryInfor {
-    margin: 33px auto;
+    margin: 7px auto;
     width: 100%;
     display: block;
     font-size: small;
@@ -44,7 +44,7 @@ button.btn.btn-outline-secondary {
 .borders button {
     display: block;
     width: 28%;
-    height: fit-content;
+    height: 8vh;
     margin: 5px;
     font-size: small;
     background-color: hsl(210, 34%, 46%);
@@ -139,7 +139,7 @@ h4 {
     }
     .borders button {       
         width: 24%;
-        height: 7vh;      
+       /* height: 7vh; */     
         font-size: medium;
         margin: 6px 1px;
     }  

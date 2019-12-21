@@ -35,7 +35,7 @@ export class CountryDetailComponent implements OnInit {
   constructor(private countryService: CountriesServiceService,
     private route: ActivatedRoute, private router: Router) { }
 
- // @HostListener('click', ['event'])
+  // @HostListener('click', ['event'])
 
 
   ngOnInit() {
@@ -52,26 +52,29 @@ export class CountryDetailComponent implements OnInit {
       this.nativeName = resultCountry.nativeName;
       this.borders = resultCountry.borders;
 
-      //curency used 
+
+      //curency used       
       this.countryCurrency = { ...this.currencies };
-      Object.entries(this.countryCurrency).forEach(item => {
-        for (let [key, value] of Object.entries(item[1])) {
-          if (key == "name") {
-            if (value !== null) {
-             // console.log(value);
-              this.resultCurrency.push(value);
+      const checkCurrency = () => { //edit in motion
+        Object.entries(this.countryCurrency).forEach(item => {
+          for (let [key, value] of Object.entries(item[1])) {
+            if (key == "name") {
+              if (value !== null) {
+                // console.log(value);
+                this.resultCurrency.push(value);
+              }
+
             }
-
           }
-        }
-      })
-
+        })
+      }
+      checkCurrency(); // edit in motion
       //languages used
       this.countryLang = { ...this.languages };
       Object.entries(this.countryLang).forEach(lang => {
         for (let [key, value] of Object.entries(lang[1])) {
           if (key == "name") {
-           // console.log(value);
+            // console.log(value);
             this.resultLang.push(value);
           }
         }
@@ -82,11 +85,11 @@ export class CountryDetailComponent implements OnInit {
         console.log("no surrounding countries");
         return;
       } else {
-       // console.log("Iterate the surrounding countries");
+        // console.log("Iterate the surrounding countries");
       }
-     // console.log(this.alpha3Code);
+      // console.log(this.alpha3Code);
       this.borders.forEach(border => {
-      //  console.log(border);
+        //  console.log(border);
         //-----------------------
         //use fetch api to view bordering countries.
         const apiEndpoint = `https://restcountries.eu/rest/v2/alpha/${border}`;
@@ -94,7 +97,7 @@ export class CountryDetailComponent implements OnInit {
         fetch(apiEndpoint)
           .then(response => response.json())
           .then(data => {
-           // console.log(data.name);
+            // console.log(data.name);
             this.borderingCountries.push(data.name);
           }).catch(error => console.log(error))
 
@@ -136,14 +139,70 @@ export class CountryDetailComponent implements OnInit {
           this.region = currentData[0].region;
           this.subregion = currentData[0].subregion;
           this.tld = currentData[0].topLevelDomain;
-          this.currencies = currentData[0].currencies;
-          this.languages = currentData[0].languages;
+
+          this.countryCurrency = currentData[0].currencies;
+          console.log(this.countryCurrency);
+          const checkCurrency = () => { //edit in motion this is duplicate code
+            this.resultCurrency = [];
+            Object.entries(this.countryCurrency).forEach(item => {
+              for (let [key, value] of Object.entries(item[1])) {
+                if (key == "name") {
+                  if (value !== null) {
+                    // console.log(value);
+                    this.resultCurrency.push(value);
+                  }
+
+                }
+              }
+            })
+          }
+          checkCurrency(); // edit in motion this is duplicate code
+
+
+          this.countryLang = currentData[0].languages;
+          //another duplicate code that needs to be taken care of
+          const changeLangs = () => {
+            this.resultLang = [];
+            Object.entries(this.countryLang).forEach(lang => {
+              for (let [key, value] of Object.entries(lang[1])) {
+                if (key == "name") {
+                  // console.log(value);
+                  this.resultLang.push(value);
+                }
+              }
+            })
+          }
+          changeLangs();
+          //this is duplicate code
+
           this.alpha3Code = currentData[0].alpha3Code;
           this.nativeName = currentData[0].nativeName;
+         
           this.borders = currentData[0].borders;
+          console.log(this.borders);
+          const borderCheck = () => {
+            this.borderingCountries = [];
+            if (this.borders.length <= 0) {
+              return;
+            } else {
 
+            }
 
+            this.borders.forEach(border => {
 
+              const apiEndpoint = `https://restcountries.eu/rest/v2/alpha/${border}`;
+
+              fetch(apiEndpoint)
+                .then(response => response.json())
+                .then(data => {
+
+                  this.borderingCountries.push(data.name);
+                }).catch(error => console.log(error))
+
+            })
+          }
+          borderCheck();
+          // ###################################### //
         }).catch(error => console.log(error))
     }
 
@@ -155,15 +214,5 @@ export class CountryDetailComponent implements OnInit {
 
   //End of country btn logic
 
-  //Fetch continent
-  fetchContinent = () => {
-    const apiEndpoint = `https://restcountries.eu/rest/v2/region/africa`;
-    fetch(apiEndpoint)
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-      }).catch(error => console.log(error))
-  }
-
-  //end of fetch continent button
+  
 }

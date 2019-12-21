@@ -3,7 +3,7 @@
     <div class="modeSelector">       
         <img [class.lightMode]="lightMode" class="moon" src="../../assets/moon-solid.svg" alt="" (click) = "toggleMode()">
        <!-- <i class="fa fa-bars" [routerLink]="['/login']"></i> -->
-        <h2>Dark Mode</h2>
+        <h2>{{lightMode ? "Light" : "Dark"}} Mode</h2>
     </div>
 </header>
 <router-outlet [class.lightMode]="lightMode"></router-outlet>

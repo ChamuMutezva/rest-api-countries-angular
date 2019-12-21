@@ -50,7 +50,11 @@ export class CountriesComponent implements OnInit {
       .then(data => {
         console.log(data);
       }).catch(error => console.log(error))
-  }
+  } 
   //End of fetch continent
+
+  selectByContinent = () => {
+    console.log(event);
+  }
 
 }
