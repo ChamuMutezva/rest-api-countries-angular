@@ -8,7 +8,7 @@ import { CountriesInterface } from '../countries-interface';
   styleUrls: ['./countries.component.css']
 })
 export class CountriesComponent implements OnInit {
-
+continentList : ["Africa", "America", "Asia", "Europe", "Oceania"];
   errorMsg: string;
   _countryFilter: string;
   get countryFilter(): string {
@@ -54,7 +54,7 @@ export class CountriesComponent implements OnInit {
   //End of fetch continent
 
   selectByContinent = () => {
-    console.log(event);
+    console.log("Continent selected", event.currentTarget);
   }
 
 }

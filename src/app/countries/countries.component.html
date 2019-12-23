@@ -1,15 +1,19 @@
 <div class="wrapper">
     <form #form="ngForm">
         <nav>
-            <input type="search" name="searchHere" [(ngModel)]="countryFilter" placeholder="Search for a country..." >
-            <select name="continents" class="listContinents" name="selectContinents">
-                <option value="all"  >Filter by region</option>                
-                <option value="africa">Africa</option>
+         <input type="search" name="searchHere" [(ngModel)]="countryFilter" placeholder="Search for a country..." > 
+        
+          <select name="continents" class="listContinents" name="selectContinents">  
+              
+                  <option value="all" selected>Filter by region</option>                
+                <option value="africa" >Africa</option>
                 <option value="america">America</option>
                 <option value="asia">Asia</option>
                 <option value="europe">Europe</option>
-                <option value="oceania">Oceania</option>
+                <option value="oceania"  (click)="selectByContinent()">Oceania</option>
+              
             </select>
+        
         </nav>
     </form>
    
