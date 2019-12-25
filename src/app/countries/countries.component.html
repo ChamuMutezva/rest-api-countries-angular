@@ -1,22 +1,15 @@
 <div class="wrapper">
     <form #form="ngForm">
         <nav>
-         <input type="search" name="searchHere" [(ngModel)]="countryFilter" placeholder="Search for a country..." > 
-        
-          <select name="continents" class="listContinents" name="selectContinents">  
-              
-                  <option value="all" selected>Filter by region</option>                
-                <option value="africa" >Africa</option>
-                <option value="america">America</option>
-                <option value="asia">Asia</option>
-                <option value="europe">Europe</option>
-                <option value="oceania"  (click)="selectByContinent()">Oceania</option>
-              
+            <input type="search" name="searchHere" [(ngModel)]="countryFilter" placeholder="Search for a country...">
+            <select class="listContinents" (change)='selectByContinent($event)' name="continents" placeholder="Filter by region">
+                <option *ngFor="let continent of continentList" [value]="continent" [selected]='continent.selected == true' >{{continent}}</option>
             </select>
-        
+           
         </nav>
+        
     </form>
-   
+
     <div class="container">
         <div class="main" *ngFor="let country of filteredCountries">
             <img [src]="country.flag" alt="" [routerLink]="['/countries', country.name]">

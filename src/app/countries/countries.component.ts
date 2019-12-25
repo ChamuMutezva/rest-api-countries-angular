@@ -8,7 +8,8 @@ import { CountriesInterface } from '../countries-interface';
   styleUrls: ['./countries.component.css']
 })
 export class CountriesComponent implements OnInit {
-continentList : ["Africa", "America", "Asia", "Europe", "Oceania"];
+  continentList: string[] = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
+  selectedContinent: string = this.continentList[0];
   errorMsg: string;
   _countryFilter: string;
   get countryFilter(): string {
@@ -22,6 +23,7 @@ continentList : ["Africa", "America", "Asia", "Europe", "Oceania"];
 
 
   constructor(private countriesService: CountriesServiceService) { }
+
   countries: CountriesInterface[];
   filteredCountries: CountriesInterface[] = [];
   ngOnInit() {
@@ -43,18 +45,28 @@ continentList : ["Africa", "America", "Asia", "Europe", "Oceania"];
   }
 
   //Fetch countries in a continent
-  fetchContinent = () => {
-    const apiEndpoint = `https://restcountries.eu/rest/v2/region/africa`;
+  // to replace 'africa' at the end of apiEndpoint variable with
+  // a variable that holds continents
+  fetchContinent(continentSelect: any)  {
+    const apiEndpoint = `https://restcountries.eu/rest/v2/region/${continentSelect}`;
     fetch(apiEndpoint)
       .then(response => response.json())
       .then(data => {
-        console.log(data);
+       // console.log(data);
+        let currentData = { ...data };
+      this.countries = currentData;
+      console.log(this.countries);
+        //this.currencies = [];
+       // console.log(currentData[0].name);
+       // console.log(currentData[0].flag);
       }).catch(error => console.log(error))
-  } 
+  }
   //End of fetch continent
 
-  selectByContinent = () => {
-    console.log("Continent selected", event.currentTarget);
+  selectByContinent(event: any) {
+    const targetContinent = event.target.value.toLowerCase();
+    console.log(targetContinent);
+    this.fetchContinent(targetContinent);
   }
 
 }
