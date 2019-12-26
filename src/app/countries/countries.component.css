@@ -63,7 +63,8 @@ input[type="search"] {
     display: block;
     margin: 141px auto 0;
     text-align: center;
-    font-size: 16pt;
+    font-size: 12pt;
+    background-color: hsl(209, 23%, 22%);
 }
 
 select.listContinents {
@@ -73,6 +74,8 @@ select.listContinents {
     width: 85%;
     border-radius: 10px;
     font-size: 12pt;
+    padding-left: 10%;
+    background-color:hsl(209, 23%, 22%) ;
 }
 
 .details {    

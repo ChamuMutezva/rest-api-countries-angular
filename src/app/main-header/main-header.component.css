@@ -1,6 +1,6 @@
 header {
     height: 20vh;
-    background-color: hsl(210, 3%, 31%);
+    background-color: hsl(209, 23%, 22%);
     position: fixed;
     width: 100%;   
     top: 0;
@@ -12,9 +12,10 @@ header {
 }
 
 .modeSelector {
-    width: 25%;
+    width: 40%;
     margin-left: auto;
     display: flex;
+    justify-content: space-evenly;
 }
 h1 {
     width: 60%;
@@ -30,6 +31,7 @@ h1:hover {
 .moon {
     width: 20px;
     padding-right: 5px;
+    transform: rotate(330deg);
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(200%) contrast(102%);
 }
 .lightMode {

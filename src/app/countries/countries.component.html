@@ -3,7 +3,8 @@
         <nav>
             <input type="search" name="searchHere" [(ngModel)]="countryFilter" placeholder="Search for a country...">
             <select class="listContinents" (change)='selectByContinent($event)' name="continents" placeholder="Filter by region">
-                <option *ngFor="let continent of continentList" [value]="continent" [selected]='continent.selected == true' >{{continent}}</option>
+                <option *ngFor="let continent of continentList" [value]="continent"  [selected]='continent.selected == true' >{{continent}}</option>
+            
             </select>
            
         </nav>
@@ -15,7 +16,7 @@
             <img [src]="country.flag" alt="" [routerLink]="['/countries', country.name]">
             <div class="details">
                 <h3>{{country.name}}</h3>
-                <h4>Population: {{country.population}}</h4>
+                <h4>Population: {{country.population | number}}</h4>
                 <h5>Region: {{country.region}}</h5>
                 <h6>Capital: {{country.capital}}</h6>
                 <!-- <p>{{country.alpha3Code}}</p>
