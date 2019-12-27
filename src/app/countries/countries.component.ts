@@ -37,18 +37,6 @@ export class CountriesComponent implements OnInit {
       error => this.errorMsg = <any>error
     );
 
-    /* trial 2 experimental stage
-
-    let continentName: string = this.route.snapshot.params[this.selectedContinent];
-    this.countriesService.getCountriesByContinent(continentName).subscribe(
-      countries => {
-        this.countries = countries;
-        this.filteredCountries = this.countries;
-
-      },
-      error => this.errorMsg = <any>error
-    )
-     end of trial 2  experimental stage */
   }
 
   performFilter(filterBy: string): CountriesInterface[] {
@@ -60,28 +48,10 @@ export class CountriesComponent implements OnInit {
   //Fetch countries in a continent
   // to replace 'africa' at the end of apiEndpoint variable with
   // a variable that holds continents
-  // trial one
-  /* fetchContinent(continentSelect: any) {
-     const apiEndpoint = `https://restcountries.eu/rest/v2/region/${continentSelect}`;
-     fetch(apiEndpoint)
-       .then(response => response.json())
-       .then(data => {
-         let currentData = { ...data };
-         this.countries = currentData;
-         console.log(this.countries);       
-         console.log(this.filteredCountries);       
-          console.log(currentData[0].flag);
-       }).catch(error => console.log(error))
-   } */
-
-
-  //End of fetch continent
-
   selectByContinent(event: any) {
+    //a variable for a continent to be searched
     const targetContinent = event.target.value.toLowerCase();
     console.log(targetContinent);
-    //
-    // all exp
     if (targetContinent == "all") {
       this.countriesService.getCountries().subscribe(
         countries => {
@@ -92,7 +62,7 @@ export class CountriesComponent implements OnInit {
       );
       return;
     }
-    //end of all exp
+    // loop the remaining continents
     let continentName: string = this.route.snapshot.params[targetContinent];
     this.countriesService.getCountriesByContinent(targetContinent).subscribe(
       countries => {
@@ -102,7 +72,6 @@ export class CountriesComponent implements OnInit {
       },
       error => this.errorMsg = <any>error
     )
-    // this.fetchContinent(targetContinent);
   }
 
 }
