@@ -7,8 +7,27 @@
     padding: 0;
 }
 
+/*
+- Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)
+- Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
+- Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
+- Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
+- Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
+- White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%)
+*/
+:root {
+    --dark-mode-elements: hsl(209, 23%, 22%);
+    --dark-mode-background: hsl(207, 26%, 17%);
+    --dark-mode-text: hsl(0, 0%, 100%);
+
+    --light-mode-text: hsl(200, 15%, 8%);
+    --light-mode-input: hsl(0, 0%, 52%);
+    --light-mode-background: hsl(0, 0%, 98%);
+    --light-mode-elements: hsl(0, 0%, 100%);
+}
+
 body {
-    background-color: hsl(207, 26%, 17%);
+    background-color: var(--dark-mode-background);
     width: 100vw;
     overflow-x: hidden;
     color: white;
@@ -17,3 +36,37 @@ body {
     padding: 0;
     margin: 0;
 }
+
+/* Theme section 
+:root {
+    
+    --foreground-default: #08090a;
+    --foreground-secondary: #41474d;
+    --foreground-tertiary: #797c80;
+    --foreground-quaternary: #f4faff;
+    --foreground-light: #41474d;
+  
+    --background-default: #f4faff;
+    --background-secondary: #a3b9cc;
+    --background-tertiary: #5c7d99;
+    --background-light: #ffffff;
+  
+    --primary-default: #5dfdcb;
+    --primary-dark: #24b286;
+    --primary-light: #b2ffe7;
+  
+   
+    
+    --background-tertiary-shadow: 0 1px 3px 0 rgba(92, 125, 153, 0.5);
+  }
+  
+  body {
+    background: var(--background-default);
+  }
+  
+  html,
+  body {
+    margin: 0;
+        padding: 0; 
+    }
+    */

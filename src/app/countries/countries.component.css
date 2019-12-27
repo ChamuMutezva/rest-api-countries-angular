@@ -1,10 +1,9 @@
-
 body {       
     margin: 0;
    padding: 0;
 }
 .wrapper {
-    background-color: hsl(207, 26%, 17%);
+   /* background-color: hsl(207, 26%, 17%);*/
     margin: 0;
    padding: 0;
    width: 100vw;
@@ -49,7 +48,7 @@ img {
     margin: 5% auto 0;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-color: hsl(209, 23%, 22%);
+    background-color: var(--dark-mode-elements);
 }
 
 img:hover {
@@ -64,7 +63,7 @@ input[type="search"] {
     margin: 141px auto 0;
     text-align: center;
     font-size: 12pt;
-    background-color: hsl(209, 23%, 22%);
+    background-color: var(--dark-mode-elements);
 }
 
 select.listContinents {
@@ -75,7 +74,7 @@ select.listContinents {
     border-radius: 10px;
     font-size: 12pt;
     padding-left: 10%;
-    background-color:hsl(209, 23%, 22%) ;
+    background-color: var(--dark-mode-elements);
 }
 
 .details {    
@@ -87,7 +86,7 @@ select.listContinents {
     height: 35vh;
     width: 100%;
     margin: auto;
-   background-color:  hsl(209, 23%, 22%);
+   background-color:  var(--dark-mode-elements);
    border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
