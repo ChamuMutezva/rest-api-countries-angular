@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CountriesServiceService } from '../countries-service.service';
 import { CountriesInterface } from '../countries-interface';
 import { ActivatedRoute } from '@angular/router';
 import { JsonPipe } from '@angular/common';
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { MainHeaderComponent } from '../main-header/main-header.component';
 
 @Component({
   selector: 'app-countries',
@@ -10,6 +12,9 @@ import { JsonPipe } from '@angular/common';
   styleUrls: ['./countries.component.css']
 })
 export class CountriesComponent implements OnInit {
+ 
+  fasearch = faSearch;
+ @Input() lightMode: boolean;  //
   continentList: string[] = ["All", "Africa", "Americas", "Asia", "Europe", "Oceania"];
   selectedContinent: string = this.continentList[0];
   errorMsg: string;
@@ -21,8 +26,6 @@ export class CountriesComponent implements OnInit {
     this._countryFilter = value;
     this.filteredCountries = this.countryFilter ? this.performFilter(this.countryFilter) : this.countries;
   }
-
-
 
   constructor(private countriesService: CountriesServiceService, private route: ActivatedRoute) { }
 

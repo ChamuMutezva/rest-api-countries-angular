@@ -84,6 +84,9 @@ button.btn.btn-outline-secondary {
     width: 100vw;
     margin: auto;
 }
+.currency {
+    padding-right: 5%;
+}
 
 h4 {
     padding-left: 10%;

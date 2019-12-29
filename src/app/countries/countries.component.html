@@ -3,6 +3,7 @@
         <nav>
             <input type="search" name="searchHere" [(ngModel)]="countryFilter" placeholder="Search for a country...">
             <select class="listContinents" (change)='selectByContinent($event)' name="continents" placeholder="Filter by region">
+               
                 <option *ngFor="let continent of continentList" [value]="continent"  [selected]='continent.selected == true' >{{continent}}</option>
             
             </select>           
