@@ -77,4 +77,14 @@ export class CountriesComponent implements OnInit {
     )
   }
 
+ /* toggleTheme = () => {     
+    let outLet = document.querySelector("router-outlet");
+    console.log(outLet.innerHTML);
+  let themeStatus =  localStorage.getItem("theme");  
+  console.log(themeStatus);
+  } */
+  
+  
+
+
 }
