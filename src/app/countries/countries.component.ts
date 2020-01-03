@@ -47,9 +47,7 @@ export class CountriesComponent implements OnInit, OnChanges {
 
   }
 // #####################
-  ngOnChanges(): void {
-   
-    
+  ngOnChanges(): void {  
    
     
   }
@@ -95,12 +93,7 @@ export class CountriesComponent implements OnInit, OnChanges {
   let themeStatus =  localStorage.getItem("theme");  
   console.log(themeStatus);
   } */
- 
-  btnClicked($event): void {
-   // msg = "hello world";
-    console.log(` parent component received information`);
-    
-  }
+  
 
 
 }
