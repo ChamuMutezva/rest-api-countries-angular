@@ -4,6 +4,8 @@ body {
 }
 .countryDetail {
     margin-top: 100px;
+    background-color: var(--dark-mode-background);
+    padding-top: 1%;
 }
 img {
     width: 78%;
@@ -102,6 +104,11 @@ button.btn.btn-outline-secondary {
 h4 {
     padding-left: 10%;
     padding-top: 10%;
+}
+
+.lightMode {
+    background-color: white;
+    color: black;
 }
 
 @media screen and (min-width: 585px) {

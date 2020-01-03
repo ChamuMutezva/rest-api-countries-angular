@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CountriesServiceService } from '../countries-service.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ThemeService } from '../theme/theme.service';
 
 @Component({
   selector: 'app-country-detail',
@@ -8,6 +9,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
   styleUrls: ['./country-detail.component.css']
 })
 export class CountryDetailComponent implements OnInit {
+  message: boolean;
   count: number = 0;
   population: number;
   capital: string;
@@ -33,12 +35,17 @@ export class CountryDetailComponent implements OnInit {
 
 
   constructor(private countryService: CountriesServiceService,
+    private themeService: ThemeService,
     private route: ActivatedRoute, private router: Router) { }
 
   // @HostListener('click', ['event'])
 
 
   ngOnInit() {
+    
+    this.themeService.currentMessage.subscribe(message => this.message = message);
+
+
     this.countryService.getCountry(this.name, (resultCountry) => {
       this.population = resultCountry.population;
       this.capital = resultCountry.capital;

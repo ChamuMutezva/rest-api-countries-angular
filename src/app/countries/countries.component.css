@@ -7,16 +7,16 @@ body {
     background-color: var(--dark-mode-background);  
     
 }
-.lightMode {
-    background-color: white;
-    color: black;
-}
-
 .wrapper {  
     margin: 0;
    padding: 0;
    width: 100vw;
-   position: relative;   
+   position: relative;  
+   background-color: var(--dark-mode-background);
+}
+
+form {
+    padding-top: 5%;
 }
 
 .container {
@@ -96,6 +96,7 @@ select.listContinents {
    background-color:  var(--dark-mode-elements);
    border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    
 }
 
 h3, h4, h5, h6 {
@@ -105,6 +106,14 @@ h4 span {
     font-weight: 100;
     opacity: 0.4;
 }
+.lightMode {
+    background-color: white;
+    color: black;
+}
+.lightModeShadow {
+ box-shadow: -1px 6px 6px 2px hsl(0, 15%, 94%); 
+}
+
 @media screen and (min-width: 700px) {
     nav {    
         padding-top: 5%;    
