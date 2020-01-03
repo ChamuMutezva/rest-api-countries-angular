@@ -1,18 +1,20 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { CountriesServiceService } from '../countries-service.service';
 import { CountriesInterface } from '../countries-interface';
 import { ActivatedRoute } from '@angular/router';
 import { JsonPipe } from '@angular/common';
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { MainHeaderComponent } from '../main-header/main-header.component';
+import { ThemeService } from '../theme/theme.service';
 
 @Component({
   selector: 'app-countries',
   templateUrl: './countries.component.html',
   styleUrls: ['./countries.component.css']
 })
-export class CountriesComponent implements OnInit {
- 
+export class CountriesComponent implements OnInit, OnChanges {
+  
+ message: boolean;
   fasearch = faSearch;
  @Input() lightMode: boolean;  //
   continentList: string[] = ["All", "Africa", "Americas", "Asia", "Europe", "Oceania"];
@@ -27,7 +29,8 @@ export class CountriesComponent implements OnInit {
     this.filteredCountries = this.countryFilter ? this.performFilter(this.countryFilter) : this.countries;
   }
 
-  constructor(private countriesService: CountriesServiceService, private route: ActivatedRoute) { }
+  constructor(private countriesService: CountriesServiceService, private themeService : ThemeService,
+    private route: ActivatedRoute) { }
 
   countries: CountriesInterface[];
   filteredCountries: CountriesInterface[] = [];
@@ -40,8 +43,17 @@ export class CountriesComponent implements OnInit {
       error => this.errorMsg = <any>error
     );
 
-  }
+    this.themeService.currentMessage.subscribe(message => this.message = message);
 
+  }
+// #####################
+  ngOnChanges(): void {
+   
+    
+   
+    
+  }
+//##########################
   performFilter(filterBy: string): CountriesInterface[] {
     filterBy = filterBy.toLocaleLowerCase();
     return this.countries.filter((country: CountriesInterface) =>
@@ -83,8 +95,12 @@ export class CountriesComponent implements OnInit {
   let themeStatus =  localStorage.getItem("theme");  
   console.log(themeStatus);
   } */
-  
-  
+ 
+  btnClicked($event): void {
+   // msg = "hello world";
+    console.log(` parent component received information`);
+    
+  }
 
 
 }

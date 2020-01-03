@@ -6,26 +6,37 @@ body {
     margin-top: 100px;
 }
 img {
-    width: 75%;
+    width: 78%;
     display: block;
     margin: auto;
 }
-button.btn.btn-outline-secondary {
-    margin-top: 30px;
+.btnContainer {
+    margin-top: 25vh;
     margin-bottom: 20px;
-    margin-left: 11%;
-    width: 25%;
+    margin-left: 13%;
+    position: relative;
+}
+ .btnContainer svg {
+    width: 20px;
+    position: relative;
+    left: -31%;
+    right: 186%;
+    margin-bottom: -2%;
+ }
+button.btn.btn-outline-secondary {   
+    width: 35%;
     height: 6vh;
     color: white;
     background-color: var(--dark-mode-elements);
-    background-image: url("../../assets/arrow-left-solid.svg");
-    background-repeat: no-repeat;
+    border: 1px solid var(--dark-mode-elements);  
+    padding-left: 5%;
 }
 
 .countryInfor {
     margin: 7px auto;
     width: 100%;
-    display: block;
+    display: flex;
+    flex-direction: column;
     font-size: small;
 }
 
@@ -98,7 +109,7 @@ h4 {
         width: 60%;
     }
     button.btn.btn-outline-secondary {
-        margin-left: 20%;
+        margin-left: 9%;
     }
     .borders {      
         justify-content: space-between;
@@ -106,6 +117,10 @@ h4 {
     }
     .borderDetails {
         width: 75vw;        
+    }
+    .btnContainer svg {             
+        margin-bottom: -1%;
+        left: -27%;
     }
 }
 
@@ -118,8 +133,13 @@ h4 {
         margin: 0;
         width: 60%;
         padding-left: 5%;
-        font-size: small;
+        font-size: small;        
     }
+    button.btn.btn-outline-secondary {
+        margin-left: -5%;
+        width: 30%;
+    }
+    
 }
 
 @media screen and (min-width: 1220px) {
@@ -134,9 +154,17 @@ h4 {
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
+
+    .btnContainer {
+        margin-top: 0vh;        
+    }
     button.btn.btn-outline-secondary {
-        margin-left: 5%;
-        width: 10%;
+        margin-left: -9%;
+        width: 17%;
+    }
+    .btnContainer svg {
+        margin-bottom: -0.5%;
+        left: -13%;
     }
     .borders {       
         width: 72%;        

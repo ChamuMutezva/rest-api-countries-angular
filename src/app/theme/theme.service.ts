@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-//import { Theme, light, dark } from "./theme";
+import { BehaviorSubject } from 'rxjs';
+/*import { Theme, light, dark } from "./theme";
 export const darkTheme = { 
   'dark-mode-elements': 'hsl(209, 23%, 22%)',
   'dark-mode-background': 'hsl(207, 26%, 17%)',
@@ -12,14 +13,21 @@ export const lightTheme = {
   'light-mode-input': 'hsl(0, 0%, 52%)',
   'light-mode-background': 'hsl(0, 0%, 98%)',
   'light-mode-elements': 'hsl(0, 0%, 100%)'
-};
+}; */
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
   constructor() { }
-  toggleDark() {
+
+  private messageSource = new BehaviorSubject<boolean>(false);
+  currentMessage = this.messageSource.asObservable();
+
+  changeMessage(message: boolean) {
+    this.messageSource.next(message);
+  }
+/*  toggleDark() {
     this.setTheme(darkTheme);
   }
 
@@ -31,6 +39,6 @@ export class ThemeService {
     Object.keys(theme).forEach(k =>
       document.documentElement.style.setProperty(`--${k}`, theme[k])
     );
-  }
+  }*/
   
 }

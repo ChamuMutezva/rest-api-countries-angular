@@ -1,11 +1,17 @@
 body {       
     margin: 0;
    padding: 0;
+ 
 }
 :host {
     background-color: var(--dark-mode-background);  
     
 }
+.lightMode {
+    background-color: white;
+    color: black;
+}
+
 .wrapper {  
     margin: 0;
    padding: 0;

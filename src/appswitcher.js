@@ -1,3 +1,3 @@
 console.log("javascript detected");
-let activeStates = document.querySelectorAll(".wrapper");
+let activeStates = document.querySelector("app-root");
 console.log(activeStates);

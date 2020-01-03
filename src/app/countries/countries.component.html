@@ -1,21 +1,25 @@
-<div class="wrapper">
+<div class="wrapper" [ngClass]="{'lightMode': message}">
+   
     <form #form="ngForm">
         <nav>
-            <input type="search" name="searchHere" [(ngModel)]="countryFilter" placeholder="Search for a country...">
-            <select class="listContinents" (change)='selectByContinent($event)' name="continents" placeholder="Filter by region">
+            <input type="search" name="searchHere" [(ngModel)]="countryFilter"
+            [ngClass]="{'lightMode': message}"  placeholder="Search for a country...">
+            <select class="listContinents" (change)='selectByContinent($event)'
+            [ngClass]="{'lightMode': message}"  name="continents" placeholder="Filter by region">
                
-                <option *ngFor="let continent of continentList" [value]="continent" 
+                <option *ngFor="let continent of continentList" [value]="continent"
+                 [ngClass]="{'lightMode': message}"
                  [selected]='continent.selected == true' >{{continent}}</option>
             
             </select>           
         </nav>
         
     </form>
-
+    
     <div class="container">
         <div class="main" *ngFor="let country of filteredCountries">
             <img [src]="country.flag" alt="flag of 'country.flag'" [routerLink]="['/countries', country.name]">
-            <div class="details">
+            <div class="details" [ngClass]="{'lightMode': message}">
                 <h3>{{country.name}}</h3>
                 <h4>Population:<span> {{country.population | number}}</span></h4>
                 <h4>Region: <span>{{country.region}}</span></h4>
