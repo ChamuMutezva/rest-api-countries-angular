@@ -15,11 +15,11 @@
 - Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
 - White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%)
 */
-:root {
+ :root {
     --dark-mode-elements: hsl(209, 23%, 22%);
     --dark-mode-background: hsl(207, 26%, 17%);
     --dark-mode-text: hsl(0, 0%, 100%);
-}
+} 
 
 body {
     /* background-color: var(--dark-mode-background); 

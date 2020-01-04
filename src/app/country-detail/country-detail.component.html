@@ -1,6 +1,7 @@
 <div class="countryDetail" [ngClass]="{'lightMode': message}">
     <div class="btnContainer">
-        <button class="btn btn-outline-secondary" (click)='onBack()'>
+        <button class="btn btn-outline-secondary" (click)='onBack()'
+            [ngClass]="{'lightMode': message, 'lightModeShadow': message}">
             Back
         </button>
         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left"
@@ -12,7 +13,7 @@
         </svg>
     </div>
     <div class="container">
-        <img [src]="flag" alt="">
+        <img [src]="flag" alt="" [ngClass]="{'lightMode': message, 'lightModeShadow': message}">
         <div class="countryInfor">
             <div class="mainDetails">
                 <div class="primaryCountryDetails">
@@ -42,7 +43,8 @@
             <div class="borderDetails">
                 <h4>Border</h4>
                 <div class="borders" (click)="changeCountry()">
-                    <button class="borderCty" *ngFor="let borderCountry of borderingCountries">
+                    <button class="borderCty" *ngFor="let borderCountry of borderingCountries"
+                        [ngClass]="{'lightMode': message, 'lightModeShadow': message}">
                         {{borderCountry}}
                     </button>
                 </div>

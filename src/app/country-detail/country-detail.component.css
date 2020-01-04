@@ -70,6 +70,7 @@ button.btn.btn-outline-secondary {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    padding-bottom: 5%;
 }
 
 .primaryCountryDetails {
@@ -106,10 +107,17 @@ h4 {
     padding-top: 10%;
 }
 
-.lightMode {
-    background-color: white;
-    color: black;
+ .lightMode {
+    --dark-mode-elements: hsl(0, 0%, 100%);
+    --dark-mode-background: hsl(0, 0%, 100%);
+    --dark-mode-text: hsl(200, 10%, 10%);
+    color: black !important;
+   /* background-color: white;
+    */
 }
+.lightModeShadow {
+    box-shadow: -1px 6px 7px 15px hsl(0, 15%, 94%); 
+   }
 
 @media screen and (min-width: 585px) {
     img, .countryInfor  {
