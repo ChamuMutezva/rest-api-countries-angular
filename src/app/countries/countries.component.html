@@ -18,7 +18,8 @@
     
     <div class="container">
         <div class="main" *ngFor="let country of filteredCountries">
-            <img [src]="country.flag" alt="flag of 'country.flag'" [routerLink]="['/countries', country.name]">
+            <img [src]="country.flag" alt="flag of 'country.flag'" [routerLink]="['/countries', country.name]"
+            [ngClass]="{'lightMode': message, 'lightModeShadow': message}" >
             <div class="details" [ngClass]="{'lightMode': message, 'lightModeShadow': message}">
                 <h3>{{country.name}}</h3>
                 <h4>Population:<span> {{country.population | number}}</span></h4>
