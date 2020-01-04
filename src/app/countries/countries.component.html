@@ -7,7 +7,7 @@
              placeholder="Search for a country..." [ngClass]="{'lightMode': message}">
             
             <select class="listContinents" (change)='selectByContinent($event)' [ngClass]="{'lightMode': message}"  name="continents" placeholder="Filter by region">
-               
+               <option value="All" [ngClass]="{'lightMode': message}">Filter by region</option>
                 <option *ngFor="let continent of continentList" [value]="continent" [ngClass]="{'lightMode': message}"
                  [selected]='continent.selected == true' >{{continent}}</option>
             

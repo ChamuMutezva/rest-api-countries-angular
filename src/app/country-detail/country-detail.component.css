@@ -116,7 +116,12 @@ h4 {
     padding-left: 10%;
     padding-top: 10%;
 }
-
+svg path {
+    fill: white;
+}
+.lightModeSvg {
+    fill: black !important;
+}
  .lightMode {
     --dark-mode-elements: hsl(0, 0%, 100%);
     --dark-mode-background: hsl(0, 0%, 100%);

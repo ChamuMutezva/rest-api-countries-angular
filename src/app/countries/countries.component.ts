@@ -17,7 +17,7 @@ export class CountriesComponent implements OnInit, OnChanges {
  message: boolean;
   fasearch = faSearch;
  @Input() lightMode: boolean;  //
-  continentList: string[] = ["All", "Africa", "Americas", "Asia", "Europe", "Oceania"];
+  continentList: string[] = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
   selectedContinent: string = this.continentList[0];
   errorMsg: string;
   _countryFilter: string;
