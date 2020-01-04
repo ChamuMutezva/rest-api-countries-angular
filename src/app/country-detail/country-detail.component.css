@@ -3,7 +3,7 @@ body {
     overflow-x: hidden;
 }
 .countryDetail {
-    margin-top: 100px;
+    margin-top: 70px;
     background-color: var(--dark-mode-background);
     padding-top: 1%;
 }
@@ -13,7 +13,7 @@ img {
     margin: auto;
 }
 .btnContainer {
-    margin-top: 25vh;
+    margin-top: 15vh;
     margin-bottom: 20px;
     margin-left: 13%;
     position: relative;
@@ -204,5 +204,6 @@ h4 {
         padding-left: 3%;
         padding-top: 6%;
     }
+    
 
 }

@@ -53,3 +53,12 @@ h1:hover {
 img.lightMode {
     filter: invert(0%) sepia(9%) saturate(0%) hue-rotate(1deg) brightness(94%) contrast(123%);
 }
+
+@media screen and (min-width: 830px) {
+    h1, h2 {
+        font-size: 24px;
+        text-align: left;
+        margin-left: 7%;
+        /* font-weight: 700; */
+    }
+}

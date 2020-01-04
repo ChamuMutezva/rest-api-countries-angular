@@ -21,10 +21,10 @@
             <img [src]="country.flag" alt="flag of 'country.flag'" [routerLink]="['/countries', country.name]"
             [ngClass]="{'lightMode': message, 'lightModeShadow': message}" >
             <div class="details" [ngClass]="{'lightMode': message, 'lightModeShadow': message}">
-                <h3>{{country.name}}</h3>
-                <h4>Population:<span> {{country.population | number}}</span></h4>
-                <h4>Region: <span>{{country.region}}</span></h4>
-                <h4>Capital: <span> {{country.capital}}</span></h4>               
+                <h3 [ngClass]="{'lightMode': message}">{{country.name}}</h3>
+                <h4 [ngClass]="{'lightMode': message}">Population:<span> {{country.population | number}}</span></h4>
+                <h4 [ngClass]="{'lightMode': message}">Region: <span>{{country.region}}</span></h4>
+                <h4 [ngClass]="{'lightMode': message}">Capital: <span> {{country.capital}}</span></h4>               
             </div>
         </div>
     </div>
