@@ -44,6 +44,11 @@ button.btn.btn-outline-secondary {
 
 .countryInfor h2 {
     margin-bottom: 15px;
+    color: white;
+}
+
+p {
+    color: white;
 }
 
 .borders {
@@ -100,9 +105,14 @@ button.btn.btn-outline-secondary {
 }
 .currency {
     padding-right: 5%;
+    color: white;
+}
+.langauges {
+    color: white;
 }
 
 h4 {
+    color: white;
     padding-left: 10%;
     padding-top: 10%;
 }

@@ -1,4 +1,4 @@
- <header [class.lightMode]="lightMode" class="activated">
+ <header [ngClass]="{'lightMode': message, 'lightModeShadow': message}">
     <h1 [routerLink]="['/countries']" >Where in the world?</h1>
     <div class="modeSelector">       
         <img [class.lightMode]="lightMode" class="moon" src="../../assets/moon-solid.svg" alt=""   (click) = "toggleMode()" >

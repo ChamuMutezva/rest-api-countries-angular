@@ -9,6 +9,7 @@ header {
     color: white;
     display: flex;
     align-items: center;
+    box-shadow: 3px 4px 5px 10px var(--dark-mode-background);
 }
 
 .modeSelector {
@@ -22,7 +23,8 @@ h1 {
     text-align: center;
 }
 h1, h2 {
-    font-size: small;
+    font-size: 18px;
+    font-weight: 700;
 }
 h1:hover {
     cursor: pointer;
@@ -34,9 +36,19 @@ h1:hover {
     transform: rotate(330deg);
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(200%) contrast(102%);
 }
-.lightMode {
+/* .lightMode {
     background-color: white;
     color: black;
+} */
+.lightMode {
+    --dark-mode-elements: hsl(0, 0%, 100%);
+    --dark-mode-background: hsl(0, 0%, 100%);
+    --dark-mode-text: hsl(200, 10%, 10%);
+    color: black !important;
+  
+}
+.lightModeShadow {
+ box-shadow: -1px 6px 6px 2px hsl(0, 15%, 94%); 
 }
 img.lightMode {
     filter: invert(0%) sepia(9%) saturate(0%) hue-rotate(1deg) brightness(94%) contrast(123%);
