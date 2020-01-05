@@ -16,7 +16,7 @@ body {
 }
 
 form {
-    padding-top: 5%;
+    padding-top: 1%;
 }
 
 .container {
@@ -64,7 +64,7 @@ input[type="search"] {
     height: 10vh;
     border-radius: 10px;
     display: block;
-    margin: 141px 5% 0;
+    margin: 85px 5% 0;
     text-align: center;
     font-size: 12pt;
     color: white;
@@ -161,6 +161,11 @@ svg path {
         margin: 5%;        
         width: 85%;       
     }
+    form {
+        padding-top: 1%;
+    }
+    
+
 }
 
 @media screen and (min-width: 1220px) {

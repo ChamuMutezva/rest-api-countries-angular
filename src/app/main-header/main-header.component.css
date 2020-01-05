@@ -1,5 +1,5 @@
 header {
-    height: 20vh;
+    height: 12vh;
     background-color: var(--dark-mode-elements); /* hsl(209, 23%, 22%);*/
     position: fixed;
     width: 100%;   
