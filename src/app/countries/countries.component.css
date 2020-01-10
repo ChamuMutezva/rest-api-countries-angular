@@ -16,7 +16,7 @@ body {
 }
 
 form {
-    padding-top: 1%;
+    padding-top: 4%;
 }
 
 .container {
@@ -68,6 +68,7 @@ input[type="search"] {
     text-align: center;
     font-size: 12pt;
     color: white;
+    border: 1px solid var(--dark-mode-background);
     background-color: var(--dark-mode-elements) !important;
 }
 
@@ -125,7 +126,7 @@ svg path {
 
 .lightMode {
     --dark-mode-elements: hsl(0, 0%, 100%);
-    --dark-mode-background: hsl(0, 0%, 100%);
+    --dark-mode-background: hsl(240, 46%, 97%);
     --dark-mode-text: hsl(200, 10%, 10%);
     color: black !important;
   

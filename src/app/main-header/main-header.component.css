@@ -1,5 +1,5 @@
 header {
-    height: 12vh;
+    padding: 24px 0;
     background-color: var(--dark-mode-elements); /* hsl(209, 23%, 22%);*/
     position: fixed;
     width: 100%;   
@@ -19,12 +19,14 @@ header {
     justify-content: space-evenly;
 }
 h1 {
+    font-size: 18px;
     width: 60%;
     text-align: center;
-}
-h1, h2 {
-    font-size: 18px;
     font-weight: 700;
+}
+h2 {  
+    font-size: 15px;  
+    font-weight: 100;
 }
 h1:hover {
     cursor: pointer;
