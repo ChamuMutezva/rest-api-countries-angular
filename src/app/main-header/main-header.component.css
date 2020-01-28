@@ -16,7 +16,8 @@ header {
     width: 40%;
     margin-left: auto;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
+    margin-right: 5%;
 }
 h1 {
     font-size: 18px;
